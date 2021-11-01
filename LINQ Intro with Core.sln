@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ Intro with Core", "LINQ Intro with Core\LINQ Intro with Core.csproj", "{871ACE13-6D6F-4A99-9C22-6813C8954832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaOrder", "PizzaOrder\PizzaOrder.csproj", "{5ECE88D1-3DF1-46A1-8B2C-9F803287693D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{871ACE13-6D6F-4A99-9C22-6813C8954832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871ACE13-6D6F-4A99-9C22-6813C8954832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871ACE13-6D6F-4A99-9C22-6813C8954832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871ACE13-6D6F-4A99-9C22-6813C8954832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ECE88D1-3DF1-46A1-8B2C-9F803287693D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECE88D1-3DF1-46A1-8B2C-9F803287693D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECE88D1-3DF1-46A1-8B2C-9F803287693D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECE88D1-3DF1-46A1-8B2C-9F803287693D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2172F52-44DF-4FC8-BF35-70F8C0D88502}
+	EndGlobalSection
+EndGlobal

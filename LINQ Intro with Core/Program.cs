@@ -74,7 +74,7 @@ namespace LINQ_Intro
             Console.WriteLine(jo["unknownkey"]);            // This fails quietly
         }
         /// <summary>
-        /// Use an API key to access data from openweathermap.org
+        /// Use an API key to access JSON data from openweathermap.org
         /// </summary>
         public static void Demo04()
         {
@@ -120,6 +120,9 @@ namespace LINQ_Intro
             string jsonString = JsonSerializer.Serialize(myPizzaOrder);
             Console.WriteLine(jsonString);
         }
+        /// <summary>
+        /// Read CSV file and query with LINQ
+        /// </summary>
         public static void Demo06()
         {
             var vins = File.ReadAllLines(@"..\..\..\VINS.csv")

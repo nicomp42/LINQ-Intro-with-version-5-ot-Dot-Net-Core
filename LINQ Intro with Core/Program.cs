@@ -10,6 +10,7 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
 using PizzaOrderNamespace;
+using VINNamespace;
 
 namespace LINQ_Intro
 {
@@ -17,7 +18,7 @@ namespace LINQ_Intro
     {
         static void Main(string[] args)
         {
-            Demo05();
+            Demo07();
         }
         /// <summary>
         /// Demonstrate using LINQ to query an array of Strings
@@ -119,5 +120,49 @@ namespace LINQ_Intro
             string jsonString = JsonSerializer.Serialize(myPizzaOrder);
             Console.WriteLine(jsonString);
         }
+        public static void Demo06()
+        {
+            var vins = File.ReadAllLines(@"..\..\..\VINS.csv")
+                .Skip(1)
+                .Where(row => row.Length > 0)
+                .Select(VIN.ParseRow).ToList();
+
+            // Use LINQ to query
+            var myLINQQuery = from vin in vins
+                              where vin.manu == "Dodge"
+                              select vin;
+
+            // Query execution
+            foreach (VIN vin in myLINQQuery) {
+                Console.WriteLine(vin.licensePlate + ", " + vin.manu + " ");
+            }
+
+        }
+        /// <summary>
+        /// Filter a list of objects with LINQ
+        /// Adapted from https://zetcode.com/csharp/filterlist/
+        /// </summary>
+        public static void Demo07()
+        {
+            var cars = new List<Car>
+            {
+                new ("Audi", 52642),
+                new ("Mercedes", 57127),
+                new ("Skoda", 9000),
+                new ("Volvo", 29000),
+                new ("Bentley", 350000),
+                new ("Citroen", 21000),
+                new ("Hummer", 41400),
+                new ("Volkswagen", 21601)
+            };
+
+            foreach (var car in from car in cars
+                                where car.Price > 9000 && car.Price < 50000
+                                select new { car.Name, car.Price })
+            {
+                Console.WriteLine($"{car.Name} {car.Price}");
+            }
+        }
+        public record Car(string Name, int Price);
     }
 }

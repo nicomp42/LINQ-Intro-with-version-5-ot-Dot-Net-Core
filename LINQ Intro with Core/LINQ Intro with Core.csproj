@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaOrder\PizzaOrder.csproj" />
+    <ProjectReference Include="..\VIN\VIN.csproj" />
   </ItemGroup>
 
 </Project>

@@ -18,7 +18,7 @@ namespace LINQ_Intro
     {
         static void Main(string[] args)
         {
-            Demo05();
+            Demo05a();
         }
         /// <summary>
         /// Demonstrate using LINQ to query an array of Strings
@@ -126,6 +126,17 @@ namespace LINQ_Intro
 
             string jsonString = JsonSerializer.Serialize(myPizzaOrder);
             Console.WriteLine(jsonString);
+        }
+        /// <summary>
+        /// Deserialize the JSON string created in Demo05
+        /// </summary>
+        public static void Demo05a()
+        {
+            String jsonString = "{\"pizzaSize\":4,\"crust\":\"Thick\",\"toppings\":[\"Mushrooms\",\"Green Olives\"]}";
+            PizzaOrder po = new PizzaOrder();
+            po = JsonSerializer.Deserialize<PizzaOrder>(jsonString);
+            Console.WriteLine(po.ToString());
+
         }
         /// <summary>
         /// Read CSV file and query with LINQ

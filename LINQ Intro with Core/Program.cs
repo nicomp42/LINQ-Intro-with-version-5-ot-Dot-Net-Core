@@ -18,7 +18,7 @@ namespace LINQ_Intro
     {
         static void Main(string[] args)
         {
-            Demo07();
+            Demo05();
         }
         /// <summary>
         /// Demonstrate using LINQ to query an array of Strings
@@ -29,15 +29,22 @@ namespace LINQ_Intro
             string[] teams = { "Bengals", "Steelers", "Ravens", "Browns" };
 
             // LINQ Query , note the data type
-            IEnumerable<string> myLINQQuery = from team in teams
+            var myLINQQuery = from team in teams
                                               orderby team
                                               select team;
 
-            // Query execution
-            foreach (String team in myLINQQuery)
-            {
-                Console.Write(team + " ");
-            }
+            // Query execution and evaluation of results
+            foreach (String team in myLINQQuery) {Console.Write(team + " ");}
+            Console.WriteLine();                    // Just to seperate result sets
+
+            // LINQ Query , note the data type
+            myLINQQuery = from team in teams
+                          where team.Length > 6
+                          orderby team
+                          select team;
+
+            // Query execution and evaluation of results
+            foreach (String team in myLINQQuery) { Console.Write(team + " "); }
         }
         /// <summary>
         /// Demonstrate using LINQ to query a text file. Spoiler alert: we read it into an array.
@@ -46,7 +53,7 @@ namespace LINQ_Intro
         {
             // Data source is a text file
             //int[][] data = File.ReadAllLines("..\\..\\data.txt").Select(l => l.Split(' ').Select(int.Parse).ToArray()).ToArray();
-            int[][] data = File.ReadAllLines(@"..\..\data.txt").Select(l => l.Split(' ').Select(int.Parse).ToArray()).ToArray();
+            int[][] data = File.ReadAllLines(@"../../../data.txt").Select(l => l.Split(' ').Select(int.Parse).ToArray()).ToArray();
 
             // LINQ Query, note that the query is parsed at compile time. This is a good time to use the 'var' data type, then hover !
             var myLINQQuery = from row in data
